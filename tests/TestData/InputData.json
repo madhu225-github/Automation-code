@@ -1,0 +1,37 @@
+{
+    
+        "signInUser" : [
+            {
+            "Name" : "Madhu Miriyala",
+            "Email": "Madhumiriyala227@gmail.com",
+            "incorrectEmail" : "Madhumiriyala@gmail.com"
+            }
+        ],
+        "AccountInfo" : [
+            {
+                "password" : "Mm@227"
+            }
+        ],
+        "AddressInfo": [
+            {
+                "firstName" : "Miriyala",
+                "lastName" : "Madhu",
+                "company" : "Wipro",
+                "Address" : "Sathupally",
+                "Address2" : "Hyderabad",
+                "State" : "Telangana",
+                "City" : "sathupally",
+                "zipcode" : "507164",
+                "number" : "8919731247"
+            }
+        ],
+        "contactInfo": [
+            {
+                "name" : "Madhu Miriyala",
+                "email" : "Madhumiriyala227@gmail.com",
+                "subject" : "Account Verification",
+                "message" : "Please verify my Account"
+            }
+        ]
+    
+}

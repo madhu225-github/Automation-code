@@ -1,0 +1,62 @@
+export class LocatorsPage {
+    constructor(page) {
+        this.homePage = page.locator("//a[normalize-space()='Home']");
+        this.signInBtn = page.locator("//a[normalize-space()='Signup / Login']");
+        this.newUser = page.locator("//h2[text()='New User Signup!']");
+        this.name  = page.getByPlaceholder('Name');
+        this.email  = page.locator("//div[@class='signup-form']").getByPlaceholder('Email Address');
+        this.signUpBtn  = page.getByRole('button',{name:'Signup'});
+        this.AcInfo = page.locator("//b[text()='Enter Account Information']");
+        this.title = page.getByLabel('Mr.');
+        this.password = page.getByLabel("Password ");
+        this.daysField = page.locator('#days');
+        this.monthsField = page.locator('#months');
+        this.yearsField = page.locator('#years');
+        this.checkboxOne = page.getByRole('checkbox',{name:'Sign up for our newsletter!'});
+        this.checkboxTwo = page.getByLabel('Receive special offers from our partners!');
+        this.firstName = page.locator("//input[@id='first_name']");
+        this.lastName = page.locator("//input[@id='last_name']");
+        this.companyName = page.locator("//input[@id='company']");
+        this.addressOne = page.locator("//input[@id='address1']");
+        this.addresstwo = page.locator("//input[@id='address2']");
+        this.state = page.locator("//input[@id='state']");
+        this.city = page.locator("//input[@id='city']");
+        this.code = page.locator("//input[@id='zipcode']");
+        this.Num = page.locator("//input[@id='mobile_number']");
+        this.accountBtn = page.getByRole('button',{name: 'Create Account'});
+        this.accountCreated = page.locator("//b[text()='Account Created!']");
+        this.continueBtn = page.getByRole('link',{ name: 'Continue' });
+        this.deleteBtn = page.getByRole('link',{ name: ' Delete Account' });
+        this.AcDetail = page.locator("//a[text()=' Logged in as ']");
+        this.AcText = page.locator("//b[text()='Account Deleted!']");
+        //
+        this.loginUser = page.locator("//h2[text()='Login to your account']");
+        this.loginEmail  = page.locator("//div[@class='login-form']").getByPlaceholder('Email Address');
+        this.loginPassword  = page.getByPlaceholder('Password');
+        this.loginBtn  = page.getByRole('button',{name:'Login'});
+        this.errorMsg = page.locator("//p[text()='Your email or password is incorrect!']");
+        this.logOut = page.locator("//a[normalize-space()='Logout']");
+        this.existError = page.locator("//p[text()='Email Address already exist!']");
+        this.contactUsBtn = page.getByRole('link',{ name: ' Contact us' });
+        this.getInTouch = page.locator("//h2[text()='Get In Touch']");
+        this.contactEmail  = page.getByRole('textbox', { name: 'Email', exact: true });
+        this.contactSubject  = page.getByPlaceholder('Subject');
+        this.contactMsg  = page.getByPlaceholder('Your Message Here');
+        this.submitBtn = page.locator("//input[@data-qa='submit-button']"); 
+        this.successMsg = page.locator("//h2[text()='Get In Touch']/following-sibling::div[contains(text(),'Success! Your details')]");
+        this.homeBtn = page.locator("//div[@id='form-section']").getByRole('link',{ name: ' Home' });
+        this.testCasesBtn = page.getByRole('link',{ name: ' Test Cases', exact: true });
+        this.testCasesURL = 'https://automationexercise.com/test_cases';
+        this.ProductsBtn = page.getByRole('link',{ name: ' Products'});
+        this.productsUrl= 'https://automationexercise.com/products';
+        this.allProducts = page.locator("//div[@class='features_items']");
+        this.viewProductBtn = page.getByRole('link',{ name: 'View Product' }).first();
+        this.prodectDetailsPage = 'https://automationexercise.com/product_details/1';
+        this.productName = page.locator("//h2[text()='Blue Top']");
+        this.productCategory = page.locator("//p[contains(text(),'Women')]");
+        this.productPrice = page.locator("//p[contains(text(),'Women')]/following-sibling::span/span");
+        this.productAvilability = page.locator("//b[text()='Availability:']");
+        this.productCondition = page.locator("//b[text()='Condition:']");
+        this.productBrand = page.locator("//b[text()='Brand:']");
+    }
+}
