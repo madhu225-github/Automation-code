@@ -29,7 +29,6 @@ export class LocatorsPage {
         this.deleteBtn = page.getByRole('link',{ name: ' Delete Account' });
         this.AcDetail = page.locator("//a[text()=' Logged in as ']");
         this.AcText = page.locator("//b[text()='Account Deleted!']");
-        //
         this.loginUser = page.locator("//h2[text()='Login to your account']");
         this.loginEmail  = page.locator("//div[@class='login-form']").getByPlaceholder('Email Address');
         this.loginPassword  = page.getByPlaceholder('Password');
@@ -58,5 +57,24 @@ export class LocatorsPage {
         this.productAvilability = page.locator("//b[text()='Availability:']");
         this.productCondition = page.locator("//b[text()='Condition:']");
         this.productBrand = page.locator("//b[text()='Brand:']");
+        this.searchProduct = page.locator("//input[@id='search_product']");
+        this.searchbtn = page.locator("//button[@id='submit_search']");
+        this.searchedProducts = page.locator("//h2[text()='Searched Products']");
+        this.subscription = page.locator("//h2[text()='Subscription']");
+        this.susbscribeEmail = page.locator("//input[@id='susbscribe_email']");
+        this.subscribeBtn = page.locator("//button[@id='subscribe']");
+        this.subscribeSuccessMsg = page.locator("//div[@id='success-subscribe']");
+        this.cartBtn = page.getByRole('link',{ name: ' Cart' });
+        this.firstProduct = page.locator("(//div[@class='single-products'])[1]");
+        this.addToCartOne = page.locator("(//a[@data-product-id='1'])[1]");
+        this.continueShopBtn = page.getByRole('button',{ name: 'Continue Shopping' });
+        this.secondProduct = page.locator("(//div[@class='single-products'])[2]");
+        this.addToCartTwo = page.locator("(//a[@data-product-id='2'])[1]");
+        this.viewCart = page.getByRole('link',{ name: 'View Cart' });
+        this.cartProducts = page.locator("//table[@id='cart_info_table']//following::tbody");
+        this.allProductPrices = page.locator("//td[@class='cart_price']/p");
+        this.allProductQuantity = page.locator("//td[@class='cart_quantity']/button");
+        this.allProductsTotal = page.locator("//td[@class='cart_total']/p");
+
     }
 }

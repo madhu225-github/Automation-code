@@ -32,6 +32,15 @@
                 "subject" : "Account Verification",
                 "message" : "Please verify my Account"
             }
+        ],
+        "searchItem" : [
+            {
+                "Item" : "shirts"
+            },
+            {
+                "subscription" : "Madhumiriyala227@gmail.com"
+            }
         ]
+        
     
 }

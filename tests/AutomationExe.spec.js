@@ -186,7 +186,7 @@ test.describe("Automation Exercise", () => {
     await expect(page).toHaveURL(testUrl);
     await page.waitForTimeout(2000);
   });
-  test.only("Verify All Products and product detail page", async () => {
+  test("Verify All Products and product detail page", async () => {
     const locatorsPage = new LocatorsPage(page);
     await expect(locatorsPage.homePage).toBeVisible();
     await locatorsPage.ProductsBtn.click();
@@ -204,5 +204,79 @@ test.describe("Automation Exercise", () => {
     await expect(locatorsPage.productCondition).toBeVisible();
     await expect(locatorsPage.productBrand).toBeVisible();
     await page.waitForTimeout(2000);
+  });
+  test(" Search Product", async () => {
+    const locatorsPage = new LocatorsPage(page);
+    await expect(locatorsPage.homePage).toBeVisible();
+    await locatorsPage.ProductsBtn.click();
+    const productURL = locatorsPage.productsUrl;
+    await expect(page).toHaveURL(productURL);
+    await expect(locatorsPage.allProducts).toBeVisible();
+    await locatorsPage.searchProduct.click();
+    await page.waitForTimeout(2000);
+    const searchData = Json.getItemByKeyAndIndex("searchItem", 0);
+    await locatorsPage.searchProduct.fill(searchData.Item);
+    await locatorsPage.searchbtn.click();
+    await expect(locatorsPage.searchedProducts).toBeVisible();
+    await expect(locatorsPage.allProducts).toBeVisible();
+    await page.waitForTimeout(2000);
+  });
+  test("Verify Subscription in home page", async () => {
+    const locatorsPage = new LocatorsPage(page);
+    await expect(locatorsPage.homePage).toBeVisible();
+    await page.evaluate(() => {
+      window.scrollTo(0, document.body.scrollHeight);
+    });
+    await page.waitForTimeout(3000);
+    await expect(locatorsPage.subscription).toBeVisible();
+    await locatorsPage.susbscribeEmail.click();
+    const searchData = Json.getItemByKeyAndIndex("searchItem", 1);
+    await locatorsPage.susbscribeEmail.fill(searchData.subscription);
+    await locatorsPage.subscribeBtn.click();
+    await page.waitForTimeout(6000);
+    await expect(locatorsPage.subscribeSuccessMsg).toHaveText(
+      "You have been successfully subscribed!"
+    );
+  });
+  test("Verify Subscription in Cart page", async () => {
+    const locatorsPage = new LocatorsPage(page);
+    await expect(locatorsPage.homePage).toBeVisible();
+    await locatorsPage.cartBtn.click();
+    await page.waitForTimeout(2000);
+    await page.evaluate(() => {
+      window.scrollTo(0, document.body.scrollHeight);
+    });
+    await page.waitForTimeout(3000);
+    await locatorsPage.susbscribeEmail.click();
+    const searchData = Json.getItemByKeyAndIndex("searchItem", 1);
+    await locatorsPage.susbscribeEmail.fill(searchData.subscription);
+    await locatorsPage.subscribeBtn.click();
+    await page.waitForTimeout(6000);
+    await expect(locatorsPage.subscribeSuccessMsg).toHaveText(
+      "You have been successfully subscribed!"
+    );
+  });
+  test("Add Products in Cart", async () => {
+    const locatorsPage = new LocatorsPage(page);
+    await expect(locatorsPage.homePage).toBeVisible();
+    await locatorsPage.ProductsBtn.click();
+    await locatorsPage.firstProduct.hover();
+    await page.waitForTimeout(2000);
+    await locatorsPage.addToCartOne.click();
+    await page.waitForTimeout(2000);
+    await locatorsPage.continueShopBtn.click();
+    await locatorsPage.secondProduct.hover();
+    await page.waitForTimeout(2000);
+    await locatorsPage.addToCartTwo.click();
+    await page.waitForTimeout(2000);
+    await locatorsPage.viewCart.click();
+    await expect(locatorsPage.cartProducts).toBeVisible(); 
+    const prices = await locatorsPage.allProductPrices.allTextContents();
+    console.log(prices);
+    const quantity = await locatorsPage.allProductQuantity.allTextContents();
+    console.log(quantity);
+    const total =  await locatorsPage.allProductsTotal.allTextContents();
+    const allPrice = total.reduce((sum,sumTotal) => sum + parseInt(sumTotal.replace("Rs. ","").  trim()), 0 );
+    console.log('AllPrice: ', allPrice);
   });
 });
