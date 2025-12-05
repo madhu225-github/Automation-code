@@ -16,7 +16,7 @@
             {
                 "firstName" : "Miriyala",
                 "lastName" : "Madhu",
-                "company" : "Wipro",
+                "company" : "Vismen",
                 "Address" : "Sathupally",
                 "Address2" : "Hyderabad",
                 "State" : "Telangana",
@@ -39,6 +39,20 @@
             },
             {
                 "subscription" : "Madhumiriyala227@gmail.com"
+            }
+        ],
+        "Description" : [
+            {
+                "checkoutReview" : "this is the best product"
+            }
+        ],
+        "payment" : [
+            {
+            "cardName" : "Madhu M",
+            "cardNumber" : "123456789",
+            "cvc" : "12345",
+            "expiry" : "jan",
+            "year" : "2030"
             }
         ]
         

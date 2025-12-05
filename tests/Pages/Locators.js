@@ -75,6 +75,23 @@ export class LocatorsPage {
         this.allProductPrices = page.locator("//td[@class='cart_price']/p");
         this.allProductQuantity = page.locator("//td[@class='cart_quantity']/button");
         this.allProductsTotal = page.locator("//td[@class='cart_total']/p");
-
+        this.viewProductBtn = page.getByRole('link',{ name: 'View Product' }).first();
+        this.susbscribeEmail = page.locator("//input[@id='quantity']");
+        this.addToCartBtn = page.locator("//button[normalize-space()='Add to cart']");
+        this.cartPage = 'https://automationexercise.com/view_cart';        
+        this.checkOut = page.locator("//a[normalize-space()='Proceed To Checkout']");
+        this.regAndLogin = page.getByRole('link',{ name: 'Register / Login' });
+        this.checkOutaddressDetails = page.locator("//h2[text()='Address Details']//following::div[@data-qa='checkout-info']");
+        this.reviewOrderDetails = page.locator("//h2[text()='Review Your Order']/following::div[@id='cart_info']");
+        this.checkoutText = page.locator("//div[@id='ordermsg']/textarea");
+        this.placeOrderBtn = page.locator("//a[text()='Place Order']");
+        this.cardName = page.locator("//input[@data-qa='name-on-card']");
+        this.cardNum = page.locator("//input[@data-qa='card-number']");
+        this.cardCvc = page.locator("//input[@data-qa='cvc']");
+        this.cardExpiryMonth = page.locator("//input[@data-qa='expiry-month']");
+        this.cardExpiryYear = page.locator("//input[@data-qa='expiry-year']");
+        this.payPaymentBtn = page.getByRole('button',{ name: 'Pay and Confirm Order' });
+        this.orderSuccessMsg = page.locator("//div[@id='success_message']");
+        this.removeProduct = page.locator("//tr[@id='product-1']/td[@class='cart_delete']/a");
     }
 }
