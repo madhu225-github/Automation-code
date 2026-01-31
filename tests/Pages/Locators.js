@@ -93,5 +93,33 @@ export class LocatorsPage {
         this.payPaymentBtn = page.getByRole('button',{ name: 'Pay and Confirm Order' });
         this.orderSuccessMsg = page.locator("//div[@id='success_message']");
         this.removeProduct = page.locator("//tr[@id='product-1']/td[@class='cart_delete']/a");
+        this.homePageURL = 'https://automationexercise.com/';
+        this.categoryText = page.locator("//h2[text()='Category']");
+        this.womenSection = page.locator("//a[normalize-space()='Women']");
+        this.womenDress = page.getByRole('link',{ name: 'Dress ' });
+        this.categoryPage = 'https://automationexercise.com/category_products/1';
+        this.dressProductText = page.locator("//h2[text()='Women - Dress Products']");
+        this.menSection = page.locator("//a[normalize-space()='Men']");
+        this.menTshirt = page.getByRole('link',{ name: 'Tshirts ' });
+        this.mensTshirtPage = page.locator("//h2[text()='Men - Tshirts Products']");
+        this.brandsText = page.locator("//h2[text()='Brands']");
+        this.poloBrand = page.getByRole('link',{ name: 'Polo' });
+        this.poloUrl = 'https://automationexercise.com/brand_products/Polo';
+        this.hmBrand = page.getByRole('link',{ name: 'H&M' });
+        this.hmUrl = 'https://automationexercise.com/brand_products/H&M';
+        this.productNames = page.locator("//div[@class='productinfo text-center']//p");
+        this.productCards = page.locator(".single-products");
+        this.allproductAddToCart = page.locator("//div[@class='product-overlay']/child::div/a");
+        this.addReviewHereBox  = page.getByPlaceholder('Add Review Here!');
+        this.writeYourName  = page.getByPlaceholder('Your Name');
+        this.viewProductEmail  = page.getByRole('textbox', { name: 'Email Address', exact: true })
+        this.reviwSubmitbtn = page.locator("//button[@id='button-review']");
+        this.reviewSuccess = page.locator("//span[text()='Thank you for your review.']");
+        this.recommendedText = page.locator("//h2[text()='recommended items']");
+        this.carosuelProducts = page.locator("//div[@id='recommended-item-carousel']");
+        this.recommendedProductAddToCart = page.locator("//div[@id='recommended-item-carousel']//p[text()='Men Tshirt']/following-sibling::a");
+        this.invoiceBtn = page.locator("//a[text()='Download Invoice']");
+        this.scrollUpBtn = page.locator("//a[@id='scrollUp']");
+        this.bannerHeading = page.locator("//div[@class='carousel-inner']/div[@class='item active']//h2[contains(text(),'Full-Fledged')]");
     }
 }

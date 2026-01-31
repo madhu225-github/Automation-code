@@ -43,7 +43,8 @@
         ],
         "Description" : [
             {
-                "checkoutReview" : "this is the best product"
+                "checkoutReview" : "this is the best product",
+                "productReview" : "This is the best product for this prise."
             }
         ],
         "payment" : [
