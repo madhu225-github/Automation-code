@@ -121,5 +121,134 @@ export class LocatorsPage {
         this.invoiceBtn = page.locator("//a[text()='Download Invoice']");
         this.scrollUpBtn = page.locator("//a[@id='scrollUp']");
         this.bannerHeading = page.locator("//div[@class='carousel-inner']/div[@class='item active']//h2[contains(text(),'Full-Fledged')]");
+
+        //PLAYWRIGHTDEMO.SPEC.JS//
+
+    this.playwrightPractice = page.getByRole("link", { name: "PlaywrightPractice" });
+    this.primaryBtn = page.getByRole("button", { name: "Primary Action" });
+    this.toggleBtn = page.getByRole("button", { name: "Toggle Button" });
+    this.userNameField = page.getByRole('textbox', { name: 'Username'});
+    this.checkbox = page.getByRole('checkbox', { name: ' Accept terms'});
+    this.homeLink = page.locator("#role-locators").getByRole("link", { name: "Home"});
+    this.productsLink = page.locator("#role-locators").getByRole('link', { name: 'Products'});
+    this.contactLink = page.locator("#role-locators").getByRole('link', { name: 'Contact'});
+    this.submitForm = page.getByRole("button", { name: 'Submit Form'});
+    this.saveBtn = page.getByRole("button", { name: "Save" });
+    this.uploadFiles = page.getByRole('button', { name:'Upload Single File'});
+    this.uploadMultipulBtn = page.getByRole('button', { name: 'Upload Multiple Files'});
+    this.dynamicBtn = page.getByRole('button', {name:'start'});
+    this.alert = page.getByRole('button', { name: 'Simple Alert' });
+    this.conformAlert = page.getByRole('button', { name: 'Confirmation Alert' });
+    this.promptAlert = page.getByRole('button', { name: 'Prompt Alert' });
+    this.newTab = page.getByRole('button', { name: 'New Tab' });
+    this.popupWindow = page.getByRole('button', { name: 'Popup Windows' });
+    this.mouseOver = page.getByRole('button', { name: 'Point Me' });
+    
+    //getByText() Locators
+    this.text = page.getByText('important', { exact: true });
+
+    //getByLabel() Locators
+    this.emailField = page.getByLabel('Email Address:');
+    this.passwordField = page.getByLabel('Password:');
+    this.ageField = page.getByLabel('Your Age:');
+    this.standard = page.getByLabel(' Standard');
+
+    //getByPlaceholder() Locators
+    this.enterName = page.getByPlaceholder("Enter your full name");
+    this.PhNum = page.getByPlaceholder("Phone number (xxx-xxx-xxxx)");
+    this.enterMsg = page.getByPlaceholder("Type your message here...");
+    this.searchProduct = page.getByPlaceholder("Search products...");
+    this.dropDownInput = page.getByPlaceholder("Select an item");
+
+    //getByAltText() Locators
+    this.img = page.getByAltText("logo image");
+
+    //getByTitle() Locators
+    this.homeTitle = page.getByTitle("Home");
+    this.htmlTitle = page.getByTitle("HTML");
+
+    //getByTestId() Locators
+    this.verifyDetails = page.getByTestId('profile-email');
+    this.editFrofile = page.getByTestId('edit-profile-btn');
+
+    //Verify file upload
+    this.selectFile = page.locator("//input[@id='singleFileInput']");
+    this.uploadStatus = page.locator("//p[@id='singleFileStatus']");
+    this.selectMultipleFile = page.locator("//input[@id='multipleFilesInput']");
+    this.uploadMultipulFileStatus = page.locator("//p[@id='multipleFilesStatus']");
+
+    //Static web table
+    this.headerElements = page.locator("//div[@id='HTML1']//table//tr/th");
+    this.countRows = page.locator("//div[@id='HTML1']//table/tbody/tr");
+    this.author = page.locator("//td[text()='Learn Selenium']/following-sibling::td[1]");
+    this.subject = page.locator("//td[text()='Master In Java']/following-sibling::td[2]");
+    this.mukeshPrices = page.locator("//tr[td[text()='Mukesh']]/td[last()]");
+    this.sumAllPrices = page.locator("//div[@id='HTML1']//tr//td[last()]");
+    this.allSubjects = page.locator("//div[@id='HTML1']//tr/td[3]");
+
+    //Dynamic web Table
+    this.dynamicTable = page.locator("//div[@id='HTML12']//table");
+    this.cpuValue = page.locator("//td[text()='Chrome']/following-sibling::td[4]");
+    this.memoryValue = page.locator("//td[text()='Chrome']/following-sibling::td[1]");
+    this.headers = page.locator("//div[@id='HTML12']//table//tr");
+    this.tptalRows = page.locator("//div[@id='HTML12']//table//tr");
+    this.chromeRow = page.locator("//table//tbody//tr[td[normalize-space(text())='Chrome']]");
+
+    //Pagination Web Table
+    this.totalPages = page.locator("//table[@id='productTable']/following-sibling::ul//a");
+    this.rows = page.locator("//table[@id='productTable']/tbody/tr");
+    this.priceRow = page.locator("//table[@id='productTable']/tbody/tr/td[3]");
+
+    //Form Section
+    this.allInputs = page.locator("//div[@id='HTML6']//div/input");
+
+    //Shadow DOM
+    this.shadowHost = page.locator("#shadow_host").locator("input[type='text']");
+    this.shadowHostFile = page.locator("#shadow_host").locator("input[type='file']");
+
+    //Tabs
+    this.wikipedia = page.locator("//input[@id='Wikipedia1_wikipedia-search-input']");
+    this.searchIcon = page.locator("//input[@type='submit']");
+    this.wikipediaLink = page.locator("//div[@id='wikipedia-search-result-link']/a[text()='Playwright']");
+
+    //Alerts
+    this.alertStatus = page.locator("//p[@id='demo']");
+
+    //MouseHover
+    this.hover = page.locator("//button[text()='Point Me']/following::div[1]");
+
+    //Double Click
+    this.DoubleClickbutton = page.getByRole('button', { name: 'Copy Text' });
+    this.InputField2 = page.locator("//input[@id='field2']");
+
+    //Drag
+    this.dragText = page.locator("//div[@id='draggable']");
+    this.copyDrag = page.locator("//div[@id='droppable']");
+
+    //Slider
+    this.sliderPoints = page.locator("//div[@id='slider-range']/span");
+    this.priceValue = page.locator("//input[@id='amount']");
+    this.totalSlider = page.locator("//div[@id='slider-range']");
+
+    //SVG Elements
+    this.circle = page.locator("//*[name()='circle']");
+    this.rectangle = page.locator("//div[@id='HTML14']//*[name()='rect']");
+    this.polygon = page.locator("//*[name()='polygon']");
+
+    //DropDown Values
+    this.dropDownValues = page.locator("//div[@id='dropdown']/div");
+    this.selectValues = page.locator("//div[@id='dropdown']/div[15]");
+
+    //Labels And Links
+    this.mobiles = page.locator("//div[@id='mobiles']");
+    this.laptop = page.locator("//div[@id='laptops']/a[text()='Apple']");
+    this.appleURL = 'https://www.apple.com/';
+    this.allLinks = page.locator("//div[@id='broken-links']/a");
+
+    //Visitors
+    this.totalvisitors = page.locator("//span[@id='Stats1_totalCount']");
+    
+    //Footer Links
+    this.footerLink = page.locator("//h2[text()='Footer Links']/following-sibling::div/ul//a");
     }
 }

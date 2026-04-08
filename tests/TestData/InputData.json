@@ -55,7 +55,22 @@
             "expiry" : "jan",
             "year" : "2030"
             }
-        ]
+        ],
         
-    
+        "searchData": [
+    {
+        "userName": "Madhu"
+    },
+    {
+        "email": "test@gmail.com",
+        "password": "12345",
+        "age": "28",
+        "fullName": "Madhu Miriyala",
+        "phoneNum": "1234567890",
+        "textMsg": "Hello! This is Madhu. How are you all?",
+        "searchPro": "Camera",
+        "shadowDOM": "Testing Shadow DOM",
+        "wikipediaText": "Playwright"
+    }
+]
 }
